@@ -2,7 +2,9 @@ public class AUTO {
     public static void main(String[] args) {
         String op[] = new String[12];
         String st = "";
-        int c = 0;
+        int c = 0;//카운트
+        int hard = 0;//하드모드여부
+        int danger = 0;//고난이도여부
 
         String a[] = {"써멀","란셋","캐슬","저스티스나이트",
                 "야토","레인저","두린","느와르코르네","12층",
@@ -22,6 +24,13 @@ public class AUTO {
         "유넥티스","위디","엑시아","에이야퍄들라","에벤홀츠","애쉬","안젤리나","아이린","아르케토","아","쏜즈","실버애쉬","시즈","시","언펙터","스테인리스",
         "보카디","스카디","스즈란","슈바르츠","수르트","샤이닝","사일라흐","사리아","사가","블레이즈","블레미샤인","백파이프","미즈키","무에나","모스티마",
         "머드락","마젤란","마운틴","링","리","루멘","로즈몬티스","로사","도로시","니엔","근니어","노시스","나이팅게일","글래디아","골든글로우","수비알"};
+
+        String star6[] = {
+                "W","혼","호시구마","헬라그","피아메타","플레임테일","팬텀","패신저","팔라스","파투스","파죰카","켈시","케오베","카넬리안","수첸","첸","이프리트",
+                "유넥티스","위디","엑시아","에이야퍄들라","에벤홀츠","애쉬","안젤리나","아이린","아르케토","아","쏜즈","실버애쉬","시즈","시","언펙터","스테인리스",
+                "보카디","스카디","스즈란","슈바르츠","수르트","샤이닝","사일라흐","사리아","사가","블레이즈","블레미샤인","백파이프","미즈키","무에나","모스티마",
+                "머드락","마젤란","마운틴","링","리","루멘","로즈몬티스","로사","도로시","니엔","근니어","노시스","나이팅게일","글래디아","골든글로우","수비알"
+        };
 
         String b[] = {"4-1","4-2","4-3","4-4","4-5","4-6","4-7","4-8","4-9","4-10","S4-1","S4-2","S4-3","S4-4","S4-5","S4-6","S4-7","S4-8",
         "S4-9","S4-10","5-1","5-2","5-3","5-4","5-5","5-6","5-7","5-8","5-9","5-10","S5-1","S5-2","S5-3","S5-4","S5-5","S5-6","S5-7","S5-8",
@@ -51,35 +60,80 @@ public class AUTO {
 
         //System.out.println(b.length);
 
-        for(int i=0; i<12; i++) {
-            c = (int)(Math.random() * 251) + 1;
-            op[i] = a[c];
+        //하드모드 체크여부
+        hard = (int)(Math.random() * 2) + 1;
 
-            for(int j=0; j<i; j++) {
-                if(op[i] == op[j]) {
-                    i--;
+        //랜덤 스테이지(EX, S, 스토리8지 이상 6성 지참여부 체크)
+        c = (int)(Math.random() * 417);
+        st = b[c-1];
+        if(st.contains("EX")){
+            danger = 1;
+        }else if(c >= 87 && c <= 168){
+            danger = 1;
+        }else if(st.charAt(0) == 'H'){
+            danger = 1;
+        }else if(st.contains("-S-")){
+            danger = 1;
+        }else if(hard == 1 && c >= 64 && c <= 86){
+            danger = 1;
+        }
+
+        //오퍼 편성(EX, S, 스토리8지 이상일시 11명편성)
+        //(그이하일시 12명 그대로편성)
+        if(danger == 0) {
+            for (int i = 0; i < 12; i++) {
+                c = (int) (Math.random() * 251);
+                op[i] = a[c];
+
+                for (int j = 0; j < i; j++) {
+                    if (op[i] == op[j]) {
+                        i--;
+                        break;
+                    }
+                }
+            }
+            System.out.print("\n\n편성: ");
+
+            for (int i = 0; i < 12; i++) {
+                if (i == 11) {
+                    System.out.print(op[i] + "\n");
                     break;
+                } else {
+                    System.out.print(op[i] + " / ");
+                }
+            }
+        }else if(danger == 1){
+            System.out.print("고난이도 감지, 6성 1개 필수편성");
+            c = (int) (Math.random() * 60);
+            op[0] = star6[c];
+
+
+            for (int i = 1; i < 11; i++) {
+                c = (int) (Math.random() * 251);
+                op[i] = a[c];
+
+                for (int j = 1; j < i; j++) {
+                    if (op[i] == op[j]) {
+                        i--;
+                        break;
+                    }
+                }
+            }
+            System.out.print("\n\n편성: ");
+
+            for (int i = 0; i < 11; i++) {
+                if (i == 10) {
+                    System.out.print(op[i] + "\n");
+                    break;
+                } else {
+                    System.out.print(op[i] + " / ");
                 }
             }
         }
-        System.out.print("\n\n편성: ");
-
-        for(int i=0; i<12; i++) {
-            if(i==11){
-                System.out.print(op[i]+"\n");
-                break;
-            }else{
-                System.out.print(op[i] + " / ");
-            }
-        }
-
-        c = (int)(Math.random() * 417);
-        st = b[c-1];
 
         System.out.println("스테이지: "+st+"\n");
 
-        c = (int)(Math.random() * 2) + 1;
-        if(c==1) {
+        if(hard == 1) {
             System.out.println("하드모드: ON");
         }else{
             System.out.println("하드모드: OFF");
