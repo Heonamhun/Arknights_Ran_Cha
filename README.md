@@ -1,5 +1,4 @@
-# Arknights_RC
- https://github.com/Heonamhun/Arknights_Random_Challenge
+# Arknights_Random_Challenge
 
 ver 1.0
 총오퍼: 251(토터, 파프리카, 훔 제외)
