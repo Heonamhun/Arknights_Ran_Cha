@@ -40,7 +40,14 @@ public class AUTO {
         "MN-2","MN-3","MN-4","MN-5","MN-6","MN-7","MN-8","MN-EX-1","MN-EX-2","MN-EX-3","MN-EX-4","MN-EX-5","MN-EX-6","MN-EX-7","MN-EX-8","MB-1",
         "MB-2","MB-3","MB-4","MB-5","MB-6","MB-7","MB-8","MB-EX-1","MB-EX-2","MB-EX-3","MB-EX-4","MB-EX-5","MB-EX-6","MB-EX-7","MB-EX-8","WR-1",
         "WR-2","WR-3","WR-4","WR-5","WR-6","WR-7","WR-8","WR-9","WR-10","WR-EX-1","WR-EX-2","WR-EX-3","WR-EX-4","WR-EX-5","WR-EX-6","WR-EX-7",
-        "WR-EX-8"};
+        "WR-EX-8","DH-1","DH-2","DH-3","DH-4","DH-5","DH-6","DH-7","DH-8","DH-9","DH-EX-1","DH-EX-2","DH-EX-3","DH-EX-4","DH-EX-5","DH-EX-6",
+        "DH-EX-7","DH-EX-8","DH-S-1","DH-S-2","DH-S-3","DH-S-4","NL-1","NL-2","NL-3","NL-4","NL-5","NL-6","NL-7","NL-8","NL-9","NL-10","NL-EX-1",
+        "NL-EX-2","NL-EX-3","NL-EX-4","NL-EX-5","NL-EX-6","NL-EX-7","NL-EX-8","NL-S-1","NL-S-2","NL-S-3","NL-S-4","NL-S-5","DM-1","DM-2","DM-3",
+        "DM-4","DM-5","DM-6","DM-7","DM-8","DM-EX-1","DM-EX-2","DM-EX-3","DM-EX-4","DM-EX-5","DM-EX-6","WD-1","WD-2","WD-3","WD-4","WD-5","WD-6",
+        "WD-7","WD-8","WD-EX-1","WD-EX-2","WD-EX-3","WD-EX-4","WD-EX-5","WD-EX-6","WD-EX-7","WD-EX-8","SV-1","SV-2","SV-3","SV-4","SV-5","SV-6",
+        "SV-7","SV-8","SV-9","SV-EX-1","SV-EX-2","SV-EX-3","SV-EX-4","SV-EX-5","SV-EX-6","SV-EX-7","SV-EX-8","SN-1","SN-2","SN-3","SN-4","SN-5",
+        "SN-6","SN-7","SN-8","SN-9","SN-10","SN-EX-1","SN-EX-2","SN-EX-3","SN-EX-4","SN-EX-5","SN-EX-6","SN-EX-7","SN-EX-8","SN-S-1-A",
+        "SN-S-1-B","SN-S-2-A","SN-S-2-B","SN-S-3-A","SN-S-3-B","SN-S-4-A","SN-S-4-B","SN-S-5"};
 
         //System.out.println(b.length);
 
@@ -66,8 +73,8 @@ public class AUTO {
             }
         }
 
-        c = (int)(Math.random() * 298) + 1;
-        st = b[c];
+        c = (int)(Math.random() * 417);
+        st = b[c-1];
 
         System.out.println("스테이지: "+st+"\n");
 
