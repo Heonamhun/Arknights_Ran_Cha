@@ -33,9 +33,16 @@ public class AUTO {
         "10-2","10-3","10-4","10-5","10-6","10-7","10-8","10-9","10-10","10-11","10-12","10-14","10-15","10-16","10-17","H10-1","H10-2","H10-3",
         "11-1","11-2","11-3","11-5","11-6","11-7","11-8","11-9","11-11","11-12","11-13","11-14","11-16","11-18","11-20","H11-1","H11-2","H11-3","H11-4",
         "GT-1","GT-2","GT-3","GT-4","GT-5","GT-6","GT-EX-1","GT-EX-2","GT-EX-3","GT-HX-1","GT-HX-2","GT-HX-3","OF-1","OF-2","OF-3","OF-4",
-        "OF-5","OF-6","OF-EX1","OF-EX2","OF-EX3","OF-EX4","OF-EX5","OF-EX6","OF-F1","OF-F2","OF-F3","OF-F4",""};
+        "OF-5","OF-6","OF-EX1","OF-EX2","OF-EX3","OF-EX4","OF-EX5","OF-EX6","OF-F1","OF-F2","OF-F3","OF-F4","CB-1","CB-2","CB-3","CB-4","CB-5",
+        "CB-6","CB-7","CB-8","CB-9","CB-10","CB-EX1","CB-EX2","CB-EX3","CB-EX4","CB-EX5","CB-EX6","CB-EX7","CB-EX8","TW-1","TW-2","TW-3","TW-4",
+        "TW-5","TW-6","TW-7","TW-8","TW-S-1","TW-S-2","TW-EX-1","TW-EX-2","TW-EX-3","TW-EX-4","TW-EX-5","TW-EX-6","TW-EX-7","TW-EX-8","RI-1","RI-2",
+        "RI-3","RI-4","RI-5","RI-6","RI-7","RI-8","RI-9","RI-EX-1","RI-EX-2","RI-EX-3","RI-EX-4","RI-EX-5","RI-EX-6","RI-EX-7","RI-EX-8","MN-1",
+        "MN-2","MN-3","MN-4","MN-5","MN-6","MN-7","MN-8","MN-EX-1","MN-EX-2","MN-EX-3","MN-EX-4","MN-EX-5","MN-EX-6","MN-EX-7","MN-EX-8","MB-1",
+        "MB-2","MB-3","MB-4","MB-5","MB-6","MB-7","MB-8","MB-EX-1","MB-EX-2","MB-EX-3","MB-EX-4","MB-EX-5","MB-EX-6","MB-EX-7","MB-EX-8","WR-1",
+        "WR-2","WR-3","WR-4","WR-5","WR-6","WR-7","WR-8","WR-9","WR-10","WR-EX-1","WR-EX-2","WR-EX-3","WR-EX-4","WR-EX-5","WR-EX-6","WR-EX-7",
+        "WR-EX-8"};
 
-        System.out.println(b.length);
+        //System.out.println(b.length);
 
         for(int i=0; i<12; i++) {
             c = (int)(Math.random() * 251) + 1;
@@ -59,7 +66,7 @@ public class AUTO {
             }
         }
 
-        c = (int)(Math.random() * 196) + 1;
+        c = (int)(Math.random() * 298) + 1;
         st = b[c];
 
         System.out.println("스테이지: "+st+"\n");
